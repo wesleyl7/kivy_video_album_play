@@ -1,0 +1,36 @@
+
+#:kivy 1.0
+#:import kivy kivy
+#:import OverlayImage main.OverlayImage
+#:import ImageButtonGridLayout main.ImageButtonGridLayout
+#:import AlbumViewScreen main.AlbumViewScreen
+#:import PlaybackScreen main.PlaybackScreen
+#:import HomeScreen main.HomeScreen
+
+<OverlayImage>:
+    canvas.before:
+        Color:
+            rgba: 0.2, 0.2, 0.2, 0.6
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<ImageButtonGridLayout>:
+    canvas.before:
+        Color:
+            rgba: 0.85, 0.85, 0.85, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<HomeScreen>:
+    ScreenManager:
+        id: screenManager
+        size_hint_y: 1.0 
+        AlbumViewScreen:
+            name: 'album_screen'
+        PlaybackScreen:
+            name: 'playback_screen'
+
+
+
